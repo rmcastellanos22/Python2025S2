@@ -33,10 +33,10 @@ app.layout = html.Div([
         html.Div(
             dcc.Dropdown(
                 id="empresa-dropdown",
-                value=["Apple", "Tesla", "Microsoft", "Google"],  # sin duplicados
+                value=["Apple", "Tesla", "Microsoft", "Google"], 
                 options=[{"label": x, "value": x} for x in sorted(df["Company"].unique())],
                 clearable=False,
-                multi=True,                  # ⬅️ IMPORTANTE
+                multi=True,                 
                 style={"width": "100%"}
             ),
             className="six columns"
@@ -104,8 +104,7 @@ def display_value(selected_stock, selected_numeric):
 
     # Tabla
     df_reshaped = dfv_filtered.pivot(index="Company", columns="Quarter", values=selected_numeric)
-    df_reshaped2 = df_reshaped.reset_index()  # ⬅️ SIN inplace
-
+    df_reshaped2 = df_reshaped.reset_index()
     table = dash_table.DataTable(
         columns=[{"name": i, "id": i} for i in df_reshaped2.columns],
         data=df_reshaped2.to_dict("records"),
