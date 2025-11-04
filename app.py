@@ -13,7 +13,7 @@ import pandas as pd
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 #Github linea de server
-server = app.server()
+server = app.server
 
 app.title = "Dashboard Financiero Github"
 
