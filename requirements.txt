@@ -1,0 +1,9 @@
+dash
+plotly
+numpy
+pathlib
+dash
+dash_bootstrap_components
+plotly.express
+pandas
+gunicorn
